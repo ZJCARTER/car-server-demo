@@ -45,6 +45,7 @@ if (Config.configs[DefaultKeys.API_SIGN] == 'Y') {
       ApplicationVersionId: validSchema(validString, false),
       ClientSession: validSchema(validString, true),
       Sign: validSchema(validString, true),
+      ApplicationParameters: validSchema(validString, true),
     },
     '/StopProject': {
       UserId: validSchema(validString, true),
@@ -71,6 +72,7 @@ if (Config.configs[DefaultKeys.API_SIGN] == 'Y') {
       ApplicationId: validSchema(validString, false),
       ApplicationVersionId: validSchema(validString, false),
       ClientSession: validSchema(validString, true),
+      ApplicationParameters: validSchema(validString, true),
     },
     '/StopProject': {
       UserId: validSchema(validString, true),
@@ -114,6 +116,7 @@ router.post('/StartProject', verifyReqParams, verifySign, async (req, res, next)
       UserId: params.UserId,
       UserIp: userIp,
       ClientSession: params.ClientSession,
+      ApplicationParameters: params.ApplicationParameters,
     });
 
 
